@@ -19,3 +19,99 @@ header{padding:30px;background:#020617}
 @keyframes rico{50%{left:300px;top:30%}100%{left:200px;top:10%}}
 button{padding:10px}
 .note{font-size:12px;color:#9ca3af}
+/* ==== SIM BOX ==== */
+.sim-box {
+  width: 90%;
+  max-width: 900px;
+  margin: 50px auto;
+  background: linear-gradient(145deg, #0b1220, #05080f);
+  border-radius: 14px;
+  padding: 40px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* ==== PROJECTILE ==== */
+.projectile {
+  width: 28px;
+  height: 6px;
+  background: linear-gradient(90deg, #ffd700, #ff8c00);
+  border-radius: 4px;
+  position: absolute;
+  left: -60px;
+  top: 50%;
+  transform: translateY(-50%);
+  filter: drop-shadow(0 0 8px orange);
+}
+
+/* ==== ARMOR ==== */
+.armor {
+  position: absolute;
+  right: 80px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 140px;
+  height: 120px;
+  background: #2e3b4e;
+  transform: skewX(-18deg) translateY(-50%);
+}
+
+/* ==== HIT EFFECT ==== */
+@keyframes hitFlash {
+  0% { box-shadow: 0 0 0px white; }
+  50% { box-shadow: 0 0 30px 12px #ffae00; }
+  100% { box-shadow: 0 0 0px white; }
+}
+
+@keyframes shake {
+  0% { transform: translateX(0) skewX(-18deg); }
+  25% { transform: translateX(-6px) skewX(-18deg); }
+  50% { transform: translateX(6px) skewX(-18deg); }
+  75% { transform: translateX(-4px) skewX(-18deg); }
+  100% { transform: translateX(0) skewX(-18deg); }
+}
+
+.armor.hit {
+  animation: hitFlash 0.25s ease, shake 0.3s ease;
+}
+
+/* ==== LAYERS ==== */
+.armor-layers {
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  gap: 8px;
+  margin-top: 30px;
+}
+
+.layer {
+  width: 120px;
+  height: 140px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  color: white;
+}
+
+.layer.era { background: #b91c1c; }
+.layer.comp { background: #065f46; }
+.layer.hull { background: #374151; }
+
+.layer.hit {
+  animation: hitFlash 0.25s ease;
+}
+
+/* ==== SPALL ==== */
+.spall-line {
+  position: absolute;
+  width: 2px;
+  height: 70px;
+  background: linear-gradient(to bottom, orange, transparent);
+  animation: spall 0.4s ease-out forwards;
+}
+
+@keyframes spall {
+  from { opacity: 1; transform: scaleY(0); }
+  to { opacity: 0; transform: scaleY(1); }
+}
