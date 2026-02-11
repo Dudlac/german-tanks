@@ -1,0 +1,21 @@
+body{margin:0;font-family:Arial;background:#0b1220;color:#e5e7eb;text-align:center}
+header{padding:30px;background:#020617}
+.container{padding:30px;display:grid;gap:50px}
+.sim-box{position:relative;margin:0 auto;width:420px;height:120px;background:#111827;border-radius:10px;overflow:hidden}
+.armor{position:absolute;right:0;width:90px;height:100%;background:#374151;display:flex;align-items:center;justify-content:center}
+.angled-plate{transform:skewY(-20deg)}
+.projectile{position:absolute;left:0;top:50%;width:20px;height:6px;background:#facc15;transform:translateY(-50%)}
+.layers{position:relative;margin:0 auto;width:420px;height:120px;background:#111827}
+.layer{position:absolute;right:0;height:100%;width:80px}
+.era{right:160px;background:#b91c1c}
+.comp{right:80px;background:#065f46}
+.hull{right:0;background:#374151}
+.inside{margin:0 auto;width:420px;height:120px;background:#111827;position:relative}
+.spall{position:absolute;left:200px;top:60px;width:0;height:0;border-left:40px solid transparent;border-right:40px solid transparent;border-bottom:60px solid #f97316;opacity:0}
+.fire{animation:shoot 1s linear forwards}
+.ricochet{animation:rico 1s linear forwards}
+.spall-show{opacity:1}
+@keyframes shoot{to{left:360px}}
+@keyframes rico{50%{left:300px;top:30%}100%{left:200px;top:10%}}
+button{padding:10px}
+.note{font-size:12px;color:#9ca3af}
